@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    >
+
+    <RelativeLayout
+        android:id="@+id/brand_num_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true">
+
+        <TextView
+            android:id="@+id/brand_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingBottom="5dp"
+            android:paddingTop="2dp"
+            android:text="1"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/brand_simple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/brand_num"
+            android:text="ST"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/country_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@id/brand_num_layout">
+
+        <ImageView
+            android:id="@+id/country_img"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/rio_flag_usa" />
+
+        <TextView
+            android:id="@+id/country_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@id/country_img"
+            android:text="USA" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/price_num_sum_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="40dp">
+
+        <FrameLayout
+            android:id="@+id/price_num_sum_img_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/rio_ic_medals_gold_s" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/rio_ic_medals_silver" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/rio_result_ic_medal_bronze" />
+        </FrameLayout>
+        <TextView
+            android:id="@+id/price_num_sum"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="99" />
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/price_num_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="40dp"
+        android:layout_toLeftOf="@id/price_num_sum_layout"
+        android:layout_toRightOf="@id/country_layout">
+
+        <FrameLayout
+            android:id="@+id/price_glod_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true">
+
+            <ImageView
+                android:id="@+id/price_glod_img"
+                android:layout_width="15dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/rio_ic_medals_gold_s" />
+
+            <TextView
+                android:id="@+id/price_glod"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="1"
+                android:gravity="center"
+                android:textColor="#FFC125"
+                />
+
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:id="@+id/price_copper_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true">
+
+            <ImageView
+                android:id="@+id/price_copper_img"
+                android:layout_width="15dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/rio_result_ic_medal_bronze" />
+
+            <TextView
+                android:id="@+id/price_copper"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="3"
+                android:gravity="center"
+                android:textColor="#CD5555"
+               />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/price_silver_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <ImageView
+                android:id="@+id/price_silver_img"
+                android:layout_width="15dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/rio_ic_medals_silver" />
+
+            <TextView
+                android:id="@+id/price_silver"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="2"
+                android:gravity="center"
+                android:textColor="#D1D1D1" />
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

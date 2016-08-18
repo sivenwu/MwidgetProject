@@ -1,0 +1,16 @@
+<cn.wsy.adapter.base.SuperRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/refreshlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="androidm.wsy.cn.mwidgetproject.Fragments.Tab1Fragment">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/tab3_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+</cn.wsy.adapter.base.SuperRefreshLayout>

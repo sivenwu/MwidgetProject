@@ -1,40 +1,55 @@
 package androidm.wsy.cn.mwidgetproject;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
+
+import androidm.wsy.cn.mwidgetproject.Fragments.MainTabFragment;
+import androidm.wsy.cn.mwidgetproject.Fragments.Tab1Fragment;
 
 public class TestActivity extends AppCompatActivity {
 
-    private Toolbar toolbar;
+    private TabLayout tabLayout;
+    private ViewPager mViewPager;
+    private MainTabFragment mainTabFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
+        initView();
+    }
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("Android M");
-        setSupportActionBar(toolbar);
+    private void initView(){
+        tabLayout = (TabLayout) findViewById(R.id.test_tablayout);
+        tabLayout.addTab(tabLayout.newTab().setText("标题1"));
+        tabLayout.addTab(tabLayout.newTab().setText("标题1"));
+        tabLayout.addTab(tabLayout.newTab().setText("标题1"));
+
+        mainTabFragment = new MainTabFragment() {
+            @Override
+            public void addSubViewTab() {
+                addTab("标题1",Tab1Fragment.class);
+                addTab("标题1",Tab1Fragment.class);
+                addTab("标题1",Tab1Fragment.class);
+            }
+
+            @Override
+            public void loadFinishView(ViewPager viewPager, FragmentStatePagerAdapter mAdapter) {
+                mViewPager = viewPager;
+                tabLayout.setupWithViewPager(mViewPager);
+                tabLayout.setTabsFromPagerAdapter(mAdapter);
+            }
+
+        };
+
+        getSupportFragmentManager().beginTransaction().add(R.id.test_contanter,mainTabFragment).commit();
+        //关联Tab
+//        tabLayout.setTabsFromPagerAdapter(mainTabFragment.getmAdapter());
     }
 
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 }
